@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <img landingimg src="./assets/tape.png" />
+    <img landingimg src="./assets/kid.png" />
   </div>
 </template>
 <script>
