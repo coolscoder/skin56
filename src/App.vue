@@ -1,18 +1,17 @@
 <template>
   <div container>
-    <div avatar-container>
-      <img avatar :src="url" >
-    </div>
     <div main>
-      <div v-for="(link, index) in links" v-bind:key="index">
-        <a :href="link.url" target="_blank" v-text="link.label" />
+      <div>
+        <p title v-text="name" />
+        <p v-text="description" />
       </div>
-      <p v-text="description"></p>
+      <div linkscontainer>
+        <div v-for="(link, index) in links" v-bind:key="index">
+          <a :href="link.url" target="_blank" v-text="'+ '+link.label" />
+        </div>
+      </div>
     </div>
-    <div landing-img-container>
-      <img landingimg src="./assets/tape.png" />
-      <p name v-text="name" />
-    </div>
+    <img landingimg src="./assets/tape.png" />
   </div>
 </template>
 <script>
@@ -21,75 +20,81 @@
     name: 'App',
     data: () => ({
       url: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3NjA4Mjc3NHx8ZW58MHx8fHw%3D&w=1000&q=80",
-      name: 'WEBBENDR',
+      name: 'webbendr',
       links: [
         {
           label: 'Tictok',
           url: 'http://google.com',
         },
         {
-          label: 'instargram',
-          url: 'http://google.com',
+          label: 'SnapChat',
+          url: 'http://google.com'
         },
         {
-          label: 'Snapchat',
+          label: 'instargram',
           url: 'http://google.com',
         },
         {
           label: 'Twitter',
           url: 'http://google.com',
         },
+        {
+          label: 'SoundCloud',
+          url: 'http://google.com',
+        },
+        {
+          label: 'Linkedin',
+          url: 'http://google.com',
+        },
+        {
+          label: 'Discord',
+          url: 'http://google.com',
+        },
+        {
+          label: 'Telegram',
+          url: 'http://google.com',
+        },
       ],
-      description: "Loren ipsum dolor sit amet, consectetur adipiscing elite, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      description: "Loren ipsum dolor set a met, consectetur adipising elit, sed to eiusmod tempor incididunt ut labore et dolore magnaaliqua.",
   })
   }
 </script>
 
 <style lang="scss">
   body {
-    background: #2c6622;
-    color: #fff;
+    background: #ffff55;
+    color: #4900c2;
     font-family: 'Courier New';
-    text-align: center;
+    font-size: 12px;
     margin: 0;
   }
   [container] {
-    padding: 15px;
+    min-height: 100vh;
   }
-  [avatar-container] {
-    height: 40vh;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-  [avatar] {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-right: -15px;
-    }
   [main] {
-    text-align: left;
+    padding: 2vh 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 50vh;
+    height: 48vh;
     a {
-      color: #e8e3dd;
-      font-family: new-spirit, serif;
-      font-weight: 500;
-      font-style: normal;
-      font-size: 42px;
+      font-size: 26px;
+      font-weight: bold;
     }
   }
-  [landing-img-container] {
-    position: absolute;
-    top: -50px;
-    left: -100px;
+  [linkscontainer] {
+    max-height: 25vh;
+    overflow-y: scroll;
+  }
+  [title] {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
   }
   [landingimg] {
-    width: 380px;
-    height: 240px;
-    transform: rotate(5deg);
-  }
-  [name] {
-    transform: rotate(-85deg);
-    margin: -120px 25px 0 0;
+    width: 100%;
+    height: 48vh;
+    background-color: #4900c2;
   }
 </style>
